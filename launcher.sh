@@ -10,13 +10,13 @@ echo $SOUND
 if [ "$SOUND" = "Leave as is" ]; then
    echo "Leave as is"
 elif [ "$SOUND" = "Auto" ]; then
-   amixer cset numid=3 0
+   amixer -c 0 cset numid=3 0
    echo "Auto set"
 elif [ "$SOUND" = "Force Headphones" ]; then
-   amixer cset numid=3 1
+   amixer -c 0 cset numid=3 1
    echo "Headphones set"
 elif [ "$SOUND" = "Force HDMI" ]; then
-   amixer cset numid=3 2
+   amixer -c 0 cset numid=3 2
    echo "HDMI set"
 else
    echo "cancel"
