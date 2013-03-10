@@ -108,6 +108,15 @@ def main():
                 else:
                     # check if a palette button was clicked
                     paletteClicked = getColorOfPaletteAt(mousex, mousey)
+            elif event.type == KEYDOWN:
+                # support up to 9 palette keys
+                try:
+                    key = int(event.unicode)
+                except:
+                    key = None
+
+                if key != None and key > 0 and key <= len(paletteColors):
+                    paletteClicked = key - 1
 
         if paletteClicked != None and paletteClicked != lastPaletteClicked:
             # a palette button was clicked that is different from the
