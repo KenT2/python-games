@@ -50,7 +50,7 @@ while [ $RET -eq 0 ]; do
         sensible-browser "http://inventwithpython.com/pygame"
      else
        if [ "$GAME" != "" ]; then
-          cd /home/pi/python_games
+          cd /home/$USER/python_games
           python $GAME.py
        fi
      fi
